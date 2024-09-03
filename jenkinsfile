@@ -1,0 +1,52 @@
+pipeline{
+    agent{
+        label "node"
+    }
+    stages{
+        stage("build"){
+            steps{
+                echo "========executing A========"    
+            }
+            
+
+        }
+
+
+                stage("package"){
+            steps{
+                echo "========executing A========"    
+            }
+            
+
+        }
+
+
+                stage("testing_env"){
+            steps{
+                echo "========executing A========"    
+            }
+            
+
+        }
+
+
+                stage("production_env"){
+            steps{
+                echo "========executing A========"    
+            }
+            
+
+        }
+    }
+    post{
+        always{
+            echo "========always========"
+        }
+        success{
+            echo "========pipeline executed successfully ========"
+        }
+        failure{
+            echo "========pipeline execution failed========"
+        }
+    }
+}
