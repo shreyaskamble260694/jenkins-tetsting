@@ -14,6 +14,8 @@ pipeline {
                     date
                     echo "Calendar:"
                     cal 2016
+                    echo "systemconfig"
+                    ps -ef
                 '''
             }
         }
