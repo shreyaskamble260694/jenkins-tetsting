@@ -9,7 +9,8 @@ pipeline {
 
         stage('package') {
             steps {
-                echo '========executing package========'
+                sh 'time'
+                sh 'date'
             }
         }
 
