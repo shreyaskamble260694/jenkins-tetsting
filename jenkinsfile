@@ -1,45 +1,44 @@
 pipeline {
     agent any
     stages {
-        stage('build') {
+        stage('Build') {
             steps {
-                 echo "Build ID: ${env.BUILD_ID}"
+                echo "Build ID: ${env.BUILD_ID}"
             }
         }
 
-     stage('package') {
-    steps {
-        sh '''
-            time
-            date
-            cal
-        '''
-    }
-}
-
-                
-
-        stage('testing_env') {
+        stage('Package') {
             steps {
-                echo '========executing testing_env========'
+                sh '''
+                    echo "Current Time:"
+                    date
+                    echo "Calendar:"
+                    cal
+                '''
             }
         }
 
-        stage('production_env') {
+        stage('Testing Environment') {
             steps {
-                echo '========executing production_env========'
+                echo '======== Executing Testing Environment ========'
+            }
+        }
+
+        stage('Production Environment') {
+            steps {
+                echo '======== Executing Production Environment ========'
             }
         }
     }
     post {
         always {
-            echo '========always========'
+            echo '======== Always Executed ========'
         }
         success {
-            echo '========pipeline executed successfully ======='
+            echo '======== Pipeline Executed Successfully ========'
         }
         failure {
-            echo '========pipeline execution failed========'
+            echo '======== Pipeline Execution Failed ========'
         }
     }
 }
