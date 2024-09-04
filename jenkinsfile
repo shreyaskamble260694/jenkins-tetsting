@@ -7,15 +7,16 @@ pipeline {
             }
         }
 
-        stage('package') {
-            steps {
-                sh '''
-                    time
-                    date
-                    cal
-                '''
-         }
-             }
+     stage('package') {
+    steps {
+        sh '''
+            time
+            date
+            cal
+        '''
+    }
+}
+
                 
 
         stage('testing_env') {
