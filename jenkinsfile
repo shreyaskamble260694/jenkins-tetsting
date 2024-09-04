@@ -9,12 +9,14 @@ pipeline {
 
         stage('package') {
             steps {
-                sh ''' 
-                        date
-                        cal 
-                 '''
-            }
-        }
+                sh '''
+                    time
+                    date
+                    cal
+                '''
+         }
+             }
+                
 
         stage('testing_env') {
             steps {
