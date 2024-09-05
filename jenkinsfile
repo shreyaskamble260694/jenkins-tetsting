@@ -1,9 +1,17 @@
 pipeline {
     agent any
+    environment {
+        NAME = 'shreyas kamble' // Define environment variable
+    }
+    parameters {
+        string(name: 'person', defaultValue: 'shreyas kamble', description: "Who are you?")
+        choice(name: 'city', choices: ['pune', 'mumbai', 'dubai'], description: "Which city?")
+    }
     stages {
         stage('Build') {
             steps {
                 echo "Build ID: ${env.BUILD_ID}"
+                echo "Name of person: ${params.person}" // Access parameter using 'params' object
             }
         }
 
@@ -14,7 +22,7 @@ pipeline {
                     date
                     echo "Calendar:"
                     cal 2016
-                    echo "systemconfig"
+                    echo "System Configuration:"
                     ps -ef
                 '''
             }
@@ -23,6 +31,12 @@ pipeline {
         stage('Testing Environment') {
             steps {
                 echo '======== Executing Testing Environment ========'
+            }
+        }
+
+        stage('Continue?') {
+            steps {
+                input message: "Should we continue?", ok: "Yes, we should continue"
             }
         }
 
