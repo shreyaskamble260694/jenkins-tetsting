@@ -21,7 +21,7 @@ pipeline {
                     echo "Current Time:"
                     date
                     echo "Calendar:"
-                    cal 2016
+                    cal
                     echo "System Configuration:"
                     ps -ef
                 '''
@@ -58,3 +58,4 @@ pipeline {
         }
     }
 }
+
