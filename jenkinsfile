@@ -24,6 +24,8 @@ pipeline {
                     cal
                     echo "System Configuration:"
                     ps -ef
+                    echo "check directory"
+		    pwd	
                 '''
             }
         }
