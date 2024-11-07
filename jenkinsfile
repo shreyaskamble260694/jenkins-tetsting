@@ -5,7 +5,7 @@ pipeline {
     }
     parameters {
         string(name: 'person', defaultValue: 'shreyas kamble', description: "Who are you?")
-        choice(name: 'city', choices: ['pune', 'mumbai', 'dubai'], description: "Which city?")
+        choice(name: 'city', choices: ['pune', 'mumbai', 'dubai','singapore'], description: "Which city?")
     }
     stages {
         stage('Build') {
@@ -17,7 +17,10 @@ pipeline {
 
         stage('Package') {
             steps {
+
                echo 'Hello shreyas'
+
+ 		echo "HElLO From TEst"
             }
         }
 
