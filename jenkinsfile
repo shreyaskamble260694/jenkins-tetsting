@@ -5,7 +5,7 @@ pipeline {
     }
     parameters {
         string(name: 'person', defaultValue: 'shreyas kamble', description: "Who are you?")
-        choice(name: 'city', choices: ['pune', 'mumbai', 'dubai','singapore'], description: "Which city?")
+        choice(name: 'city', choices: ['pune', 'mumbai', 'dubai', 'singapore'], description: "Which city?")
     }
     stages {
         stage('Build') {
@@ -17,9 +17,15 @@ pipeline {
 
         stage('Package') {
             steps {
+                echo "Hello from Test"
+                echo 'Hello Shreyas'
+            }
+        }
 
- 		           echo "HElLO From TEst"
-               echo 'Hello shreyas'
+        stage('Code Scan') {
+            steps {
+                echo "Code check quality using SonarQube"
+                echo 'Done code quality'
             }
         }
 
@@ -53,4 +59,3 @@ pipeline {
         }
     }
 }
-
