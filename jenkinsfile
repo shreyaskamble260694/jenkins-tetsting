@@ -1,11 +1,11 @@
 pipeline {
     agent any
     environment {
-        NAME = 'memeber portal' // Define environment variable
+        NAME = 'shreyas ganesh kamble' // Define environment variable
     }
     parameters {
         string(name: 'person', defaultValue: 'shreyas kamble', description: "Who are you?")
-        choice(name: 'city', choices: ['pune', 'mumbai', 'dubai','singapore'], description: "Which city?")
+        choice(name: 'city', choices: ['pune', 'mumbai', 'dubai', 'singapore', 'idhao'], description: "Which city?")
     }
     stages {
         stage('Build') {
@@ -17,10 +17,15 @@ pipeline {
 
         stage('Package') {
             steps {
+                echo 'Hello Shreyas'
+                echo "Hello from Test"
+            }
+        }
 
-               echo 'Hello shreyas'
-
- 		echo "HElLO From TEst"
+        stage('Code Scan') {
+            steps {
+                echo "Code check quality using SonarQube"
+                echo 'Done code quality'
             }
         }
 
@@ -54,4 +59,3 @@ pipeline {
         }
     }
 }
-
