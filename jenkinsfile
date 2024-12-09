@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        NAME = 'shreyas ganesh kamble' // Define environment variable
+        NAME = 'memeber portal' // Define environment variable
     }
     parameters {
         string(name: 'person', defaultValue: 'shreyas kamble', description: "Who are you?")
